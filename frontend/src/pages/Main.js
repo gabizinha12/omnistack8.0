@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import './Main.css'
 
@@ -29,7 +30,12 @@ export default function Main({ match }) {
         console.log('like', id)
         await api.post(`/devs/${id}/likes`, null, {
             headers: {user: match.params.id}
+        }).then(response => { 
+            console.log(response)
         })
+        .catch(error => {
+            console.log(error.response)
+        });
 
         setUsers(users.filter(user => user._id !== id))
     }
@@ -38,15 +44,21 @@ export default function Main({ match }) {
         console.log('dislike', id)
         await api.post(`/devs/${id}/dislikes`, null, {
             headers: {user: match.params.id}
+        }).then(response => { 
+            console.log(response)
         })
+        .catch(error => {
+            console.log(error.response)
+        });
 
         setUsers(users.filter(user => user._id !== id))
     }
 
     return (
         <div className="main-container">
+            <Link to="/">
                 <img src={logo} alt="Logo Tindev" />
-
+            </Link>
             { users.length > 0 ? (
                 <ul>
                     {users.map(user => (
