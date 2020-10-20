@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "npx": "^10.2.2",
+    "react-native": "^0.63.3"
+  }
+}
