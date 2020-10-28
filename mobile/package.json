@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "npx": "^10.2.2",
-    "react-native": "^0.63.3"
+    "react-native-gesture-handler": "^1.8.0",
+    "react-native-reanimated": "^1.13.1",
+    "react-navigation": "^4.4.3"
   }
 }
